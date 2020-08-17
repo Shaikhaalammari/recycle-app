@@ -1,9 +1,11 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
+import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+//components
+import RootNavigator from "./components/Navigation";
+//Styles
 import { ThemeProvider } from "styled-components";
-import Home from "./components/Home";
-import VendorList from "./components/VendorList";
 
 const theme = {
   light: {
@@ -27,19 +29,9 @@ const theme = {
 export default function App() {
   return (
     <ThemeProvider theme={theme.light}>
-      <View style={styles.container}>
-        <Home />
-        <StatusBar style="auto" />
-      </View>
+      <NavigationContainer>
+        <RootNavigator />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

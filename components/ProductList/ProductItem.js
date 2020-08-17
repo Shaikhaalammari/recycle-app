@@ -1,7 +1,7 @@
 import React from "react";
 import { ListItem } from "native-base";
 //styles
-import { VendorItemStyled } from "./styles";
+import { VendorItemStyled } from "../VendorList/styles";
 
 const ProductItem = ({ product }) => {
   return (

@@ -9,7 +9,7 @@ import {
   ButtonStyled,
 } from "./styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <HomeBackground
       source={{
@@ -21,7 +21,7 @@ const Home = () => {
         <Title>Recycled Closet</Title>
       </TopStyling>
       <BottomStyling>
-        <ButtonStyled onPress={() => alert("Take me to the list of Vendors")}>
+        <ButtonStyled onPress={() => navigation.navigate("Vendors")}>
           skip
         </ButtonStyled>
       </BottomStyling>

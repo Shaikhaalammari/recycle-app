@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { observer } from "mobx-react";
 import { View, Text } from "react-native";
 import { List, Content } from "native-base";
+import vendorStore from "../../stores/vendorStore";
 import productStore from "../../stores/productStore";
+import ProductItem from "./ProductItem";
 
-const ProductList = () => {
+const ProductList = ({ route }) => {
   if (vendorStore.loading) return <Text>Loading</Text>;
-  const ProductList = productStore.products.map((product) => (
-    <ProductItemItem product={product} key={product.id} />
-  ));
+  const { vendor } = route.params;
+  const productList = vendor.cookies
+    .map((product) => productStore.getProductById(product.id))
+    .map((product) => <ProductItem product={product} key={product.id} />);
   return (
     <Content>
-      <List>{ProductList}</List>
+      <List>{productList}</List>
     </Content>
   );
 };

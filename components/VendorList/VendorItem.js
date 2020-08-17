@@ -4,9 +4,11 @@ import { ListItem } from "native-base";
 //styles
 import { VendorItemStyled } from "./styles";
 
-const VendorItem = ({ vendor }) => {
+const VendorItem = ({ vendor, navigation }) => {
   return (
-    <ListItem>
+    <ListItem
+      onPress={() => navigation.navigate("Products", { vendor: vendor })}
+    >
       <VendorItemStyled>{vendor.name}</VendorItemStyled>
     </ListItem>
   );

@@ -7,7 +7,7 @@ class VendorStore {
 
   fetchVendors = async () => {
     try {
-      const response = await instance.get("/vendors");
+      const response = await instance.get("/bakeries");
       this.vendors = response.data;
       console.log(response.data);
       this.loading = false;

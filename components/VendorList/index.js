@@ -3,15 +3,17 @@ import { observer } from "mobx-react";
 import vendorStore from "../../stores/vendorStore";
 import { View, Text } from "react-native";
 import { List, Content } from "native-base";
+import VendorItem from "./VendorItem";
 
-const VendorList = () => {
+const VendorList = ({ navigation, route }) => {
   if (vendorStore.loading) return <Text>Loading</Text>;
-  const VendorList = vendorStore.vendors.map((vendor) => (
-    <vendorItem vendor={vendor} key={vendor.id} />
+
+  const vendorList = vendorStore.vendors.map((vendor) => (
+    <VendorItem vendor={vendor} key={vendor.id} navigation={navigation} />
   ));
   return (
     <Content>
-      <List>{VendorList}</List>
+      <List>{vendorList}</List>
     </Content>
   );
 };

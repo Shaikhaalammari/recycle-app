@@ -7,7 +7,7 @@ class ProductStore {
 
   fetchProducts = async () => {
     try {
-      const response = await instance.get("http://localhost:8000/products");
+      const response = await instance.get("/cookies");
       this.products = response.data;
       this.loading = false;
     } catch (error) {
@@ -24,6 +24,6 @@ decorate(ProductStore, {
   loading: observable,
 });
 
-const ProductStore = new ProductStore();
-ProductStore.fetchProducts();
-export default ProductStore;
+const productStore = new ProductStore();
+productStore.fetchProducts();
+export default productStore;
