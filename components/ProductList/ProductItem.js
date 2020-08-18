@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { ListItem, Left, Right, Button, Text } from "native-base";
+import { ListItem, Left, Right, Button, Text, Icon } from "native-base";
 import NumericInput from "react-native-numeric-input";
 
 //styles
 import { VendorItemStyled } from "../VendorList/styles";
+import { AddButtonStyles } from "../buttons/styles";
 //stores
 import cartStore from "../../stores/cartStore";
 
@@ -27,15 +28,17 @@ const ProductItem = ({ product }) => {
           onChange={setQuantity}
           rounded
           textColor="#91d18b"
-          rightButtonBackgroundColor="#edaaaa"
+          rightButtonBackgroundColor="#ffd5cd"
+          leftButtonBackgroundColor="#ffd5cd"
           totalHeight={30}
           totalWidth={70}
           initValue={1}
         />
-
-        <Button onPress={handleAdd}>
-          <Text>Add</Text>
-        </Button>
+        <AddButtonStyles
+          onPress={handleAdd}
+          type="Fontisto"
+          name="shopping-basket-add"
+        ></AddButtonStyles>
       </Right>
     </ListItem>
   );
