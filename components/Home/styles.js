@@ -1,9 +1,9 @@
 import styled from "styled-components/native";
 
 export const HomeBackground = styled.ImageBackground`
-  flex: 0.5;
   width: 100%;
   height: 90%;
+  flex: 1;
 `;
 
 export const TopStyling = styled.View`

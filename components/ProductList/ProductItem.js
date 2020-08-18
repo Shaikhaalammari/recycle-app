@@ -36,8 +36,9 @@ const ProductItem = ({ product }) => {
         />
         <AddButtonStyles
           onPress={handleAdd}
-          type="Fontisto"
-          name="shopping-basket-add"
+          type="MaterialIcons"
+          name="add"
+          color="#f09ae9"
         ></AddButtonStyles>
       </Right>
     </ListItem>

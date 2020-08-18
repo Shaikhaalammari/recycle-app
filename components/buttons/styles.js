@@ -11,4 +11,4 @@ export const CartTextStyled = styled(Text)`
 `;
 
 export const AddButtonStyles = styled(Icon)`
-color="#e11d74"`;
+color="#f09ae9"`;
