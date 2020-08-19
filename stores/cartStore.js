@@ -37,6 +37,11 @@ class CartStore {
     this.items = this.items.filter((item) => item.productId !== itemId);
     await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
   };
+
+  checkoutCart = () => {
+    this.items = [];
+    alert("you got an amazing stuff");
+  };
 }
 
 decorate(CartStore, {
