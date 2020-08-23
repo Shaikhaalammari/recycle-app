@@ -38,9 +38,16 @@ class CartStore {
     await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
   };
 
-  checkoutCart = () => {
-    this.items = [];
-    alert("you got an amazing stuff");
+  checkoutCart = async () => {
+    try {
+      const res = await instance.post("/checkout", this.items);
+      console.log("CartStore -> checkoutCart -> res", res.data);
+      this.items = [];
+      await AsyncStorage.removeItem("myCart");
+      alert("amazing stuff in here!");
+    } catch (error) {
+      console.log("CartStore -> checkoutCart -> error", error);
+    }
   };
 }
 
