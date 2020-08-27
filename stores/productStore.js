@@ -7,7 +7,7 @@ class ProductStore {
 
   fetchProducts = async () => {
     try {
-      const response = await instance.get("/cookies");
+      const response = await instance.get("/cookies"); // because i was using laila's BE
       this.products = response.data;
       this.loading = false;
     } catch (error) {

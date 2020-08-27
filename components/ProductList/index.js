@@ -9,7 +9,7 @@ import ProductItem from "./ProductItem";
 const ProductList = ({ route }) => {
   if (vendorStore.loading) return <Text>Loading</Text>;
   const { vendor } = route.params;
-  const productList = vendor.cookies
+  const productList = vendor.cookies // because i was using laila's BE
     .map((product) => productStore.getProductById(product.id))
     .map((product) => <ProductItem product={product} key={product.id} />);
   return (
